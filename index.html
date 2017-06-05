@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Zappa - A framework for AWS Lambda</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/solarized.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>ZAPPA</h1>
+          <p>Do that Python thing - in the cloud</p>
+        </section>
+        <section>
+          <h2>Ricardo Moreno</h2>
+          <ul>
+            <li>Backend developer at Yokee Music™</li>
+            <li>Python enthusiast for more than 5 years</li>
+            <li>github/ricardinho</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Zappa</h2>
+          <p>Created by Rich Jones (github/miserlou)</p>
+        </section>
+        <section>
+          <h2>
+            Zappa
+          </h2>
+          <p>
+            Serverless Python Web Services - Powered by AWS Lambda and API Gateway
+          </p>
+        </section>
+        <section>
+          <h2> Zappa </h2>
+          <ul>
+            <li> Serverless </li>
+            <li> Python </li>
+            <li> Web Services </li>
+            <li> AWS Lambda </li>
+            <li> API Gateway </li>
+          </ul>
+        </section>
+        <section>
+          <h2> Zappa </h2>
+          <ul>
+            <li> Serverless </li>
+            <li> <strong style="font-size:1.5em">Python</strong> </li>
+            <li> Web Services </li>
+            <li> AWS Lambda </li>
+            <li> API Gateway </li>
+          </ul>
+        </section>
+        <section>
+          <h2> Python </h2>
+          <ul>
+            <li> We love python </li>
+            <li> WSGI* for web apps (pep 333) </li>
+          </ul>
+          <p class="fragment">*Web Server Gateway Interface</p>
+
+        </section>
+        <section>
+          <h2> Zappa </h2>
+          <ul>
+            <li> <strong style="font-size:1.5em">Serverless</strong> </li>
+            <li> Python </li>
+            <li> Web Services </li>
+            <li> AWS Lambda </li>
+            <li> API Gateway </li>
+          </ul>
+        </section>
+        <section>
+          <h2> Serverless </h2>
+          <p>The name that cloud providers give to Microservices</p>
+        </section>
+        <section>
+          <h2> Wait... </h2>
+          <p>The name that cloud providers give to 
+            <strong style="font-size:1.5em">Microservices</strong></p>
+        </section>
+        <section>
+          <h2> Microservices </h2>
+          <ul>
+            <li class="fragment"> Small software components</li>
+            <li class="fragment"> Invoked by Triggers </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Small software components</h2>
+          <p class="fragment">Think Functions!</p>
+        </section>
+        <section>
+          <h2> Triggers </h2>
+          <ul>
+            <li> Web requests </li>
+            <li> Queues </li>
+            <li> Application events (think DB triggers) </li>
+            <li> Scheduled runs (CRON) </li>
+          </ul>
+        </section>
+        <section>
+          <h2> Serverless </h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Cloud Provider</th>
+                <th>Service Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AWS</td>
+                <td>Lambda</td>
+              </tr>
+              <tr>
+                <td>Microsoft Azure</td>
+                <td>Functions</td>
+              </tr>
+              <tr>
+                <td>Google</td>
+                <td>Cloud Functions</td>
+              </tr>
+          </table>
+        </section>
+        <section>
+          <h2> Zappa </h2>
+          <ul>
+            <li> Serverless</li>
+            <li> Python </li>
+            <li> Web Services </li>
+            <li> <strong style="font-size:1.5em">AWS Lambda</strong> </li>
+            <li> API Gateway </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>AWS Lambda</h2>
+          <ul>
+            <li class="fragment" style="font-size:0.8em">Nodejs</li>
+            <li class="fragment">JVM</li>
+            <li class="fragment" style="font-size:1.2em">Python 2.7</li>
+            <li class="fragment" style="font-size:1.7em">Python 3.6!!!</li>
+          </ul>
+        </section>
+        <section>
+          <h2>AWS Lambda - Function</h2>
+          <p> Handler function</p>
+          <pre><code>def my_handler(event, context):
+    return "response!"</code></pre>
+        </section>
+        <section>
+          <h2>AWS Lambda - Triggers</h2>
+          <ul>
+            <li>SNS</li>
+            <li>DynamoDB</li>
+            <li>S3</li>
+            <li>CloudWatch Events (Including scheduled events)</li>
+            <li>API Gateway</li>
+          </ul>
+        </section>
+        <section>
+          <h2> Zappa </h2>
+          <ul>
+            <li> Serverless</li>
+            <li> Python </li>
+            <li> Web Services </li>
+            <li> AWS Lambda </li>
+            <li> <strong style="font-size:1.5em">API Gateway</strong> </li>
+          </ul>
+        </section>
+        <section>
+          <h2> API Gateway </h2>
+          <ul>
+            <li>API Versioning</li>
+            <li>Authentication</li>
+            <li>Throttling</li>
+            <li>Multiple Backends</li>
+          </ul>
+        </section>
+        <section>
+          <h2> API Gateway </h2>
+          <p> Converts HTML into Lambda event/context objects</p>
+        </section>
+        <section>
+          <h2>AWS Lambda - Function</h2>
+          <p> Handler function</p>
+          <pre><code>def my_handler(event, context):
+    return "response!"</code></pre>
+        </section>
+        <section>
+          <h2> Python </h2>
+          <p> PEP 333 (WSGI) !!!</p>
+          <pre class="fragment"><code>def wsgi_function(environ, start_response):
+    return "response!"</code></pre>
+        </section>
+        <section>
+          <h2> ZAPPA </h2>
+          <p class="fragment"> Converts lambda event/context into WSGI </p>
+        </section>
+        <section>
+          <h2> ZAPPA </h2>
+          <p> Supports all python WSGI frameworks</p>
+          <ul>
+            <li>Django</li>
+            <li>Flask</li>
+            <li>Pyramid</li>
+            <li>And More...</li>
+          </ul>
+        </section>
+        <section>
+          <h2> ZAPPA </h2>
+          <p> Can create all the AWS permissions/roles/buckets for you</p>
+          <pre class="fragment"><code>zappa init</code></pre>
+          <p class="fragment">Understand what this step does</p>
+        </section>
+        <section>
+          <h2> ZAPPA </h2>
+          <p> Manage your deployments </p>
+          <pre class="fragment"><code>zappa deploy</code></pre>
+          <pre class="fragment"><code>zappa update</code></pre>
+        </section>
+        <section>
+          <h2> ZAPPA </h2>
+          <p> Understand what is going on inside your app </p>
+          <pre class="fragment"><code>zappa status</code></pre>
+          <pre class="fragment"><code>zappa tail</code></pre>
+        </section>
+        <section>
+          <h2> ZAPPA </h2>
+          <p> Configure Events</p>
+          <pre><code>"events": [
+            {   // Recurring events
+                "function": "your_module.your_recurring_function", // The function to execute
+                "expression": "rate(1 minute)" // When to execute it (in cron or rate format)
+            },
+            {   // AWS Reactive events
+                "function": "your_module.your_reactive_function", // The function to execute
+                "event_source": {
+                    "arn":  "arn:aws:s3:::my-bucket", // The ARN of this event source
+                    "events": [
+                        "s3:ObjectCreated:*" // The specific event to execute in response to.
+                    ]
+                }
+            }
+        ]</code></pre>
+        </section>
+        <section>
+          <h2> ZAPPA - other goodies</h2>
+          <p> Environment variables in zappa config, S3 or KMS</p>
+          <p> Certificate management </p>
+          <p> Django management commands</p>
+        </section>
+        <section>
+          <h2> Example - Add a watermark to a picture</h2>
+        </section>
+        <section>
+          <h2> Zappa - good takeaways</h2>
+          <p class="fragment">Leverages writing python apps on AWS Lambda</p>
+          <p class="fragment">AWS is cheap - specially for small apps</p>
+        </section>
+        <section>
+          <h2> Zappa - bad takeaways</h2>
+          <p class="fragment"> Default options are permissive security wise</p>
+        </section>
+        <section>
+          <h2>What was missing?</h2>
+          <p class="fragment"> Serverless = Stateless</p>
+          <p class="fragment"> you still need to store your data somewhere</p>
+        </section>
+        <section>
+          <h1> Thank You!</h1>
+        </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        transition: "none",
+        center: false,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
